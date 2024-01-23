@@ -1,3 +1,6 @@
+import { Dashboard } from "./components/Dashboard"
+import { Header } from "./components/Header"
+import { SearchBar } from "./components/SearchBar"
 import "./globalStyles.scss"
 
 
@@ -6,10 +9,14 @@ function App() {
 
   return (
     <>
-      <div className='container'>
-        <h3>Hello, world</h3>
 
-      </div>
+      <Header />
+      <main>
+        <SearchBar/>
+        <Dashboard />
+      </main>
+
+    
     </>
   )
 }

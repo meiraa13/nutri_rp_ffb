@@ -1,0 +1,21 @@
+.ul-dash {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: 350px;
+    overflow-y: auto;
+
+
+    li {
+        border: 1px solid;
+        padding: 0.5rem;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        text-align: center;
+    }
+}
