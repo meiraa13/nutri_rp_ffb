@@ -1,0 +1,26 @@
+
+.div-dashboard {
+
+    padding: 2rem;
+    width: 100%;
+
+    form {
+
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+        input {
+            padding: 0.7rem;
+            width: 80%;
+            border-radius: 0.3rem;
+            border: 1px solid;
+        }
+
+        button {
+            padding: 0.7rem;
+            border-radius: 0.3rem;
+            border: 1px solid;
+        }
+    }
+}
+

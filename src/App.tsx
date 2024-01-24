@@ -1,3 +1,5 @@
+import { Aside } from "./components/Aside"
+import { Dashboard } from "./components/Dashboard"
 import "./globalStyles.scss"
 
 
@@ -5,12 +7,12 @@ function App() {
  
 
   return (
-    <>
-      <div className='container'>
-        <h3>Hello, world</h3>
+    <div className="main-div">
+      <Aside />
+      <Dashboard />
+    </div>
 
-      </div>
-    </>
+      
   )
 }
 

@@ -11,6 +11,10 @@
    
 }
 
+button {
+    cursor: pointer;
+}
+
 
 :root {
     --color-primary: #fd377e;
@@ -33,4 +37,10 @@ body {
     margin: 0 auto;
     width: 100%;
     padding: 2rem 1rem;
+}
+
+.main-div {
+
+    display: flex;
+
 }

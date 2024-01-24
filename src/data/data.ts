@@ -1,7 +1,8 @@
 
 export const jsonData = [
     {
-        alimento:"arroz branco",
+        id:1,
+        alimento:"Arroz Branco",
         peso:"500g",
         modo_consumo:"puro",
         glicemia:"ficou estável",
@@ -9,17 +10,19 @@ export const jsonData = [
         hipoglicemia:false
 
     },
-    {
-        alimento:"doce de leite",
+    {   
+        id:2,
+        alimento:"Doce de Leite",
         peso:"50g",
         modo_consumo:"puro",
-        glicemia:"subiu",
+        glicemia:"subiu 20mg/di",
         conclusão:"moderado",
         hipoglicemia:false
 
     },
     {
-        alimento:"melancia",
+        id:3,
+        alimento:"Melancia",
         peso:"350g",
         modo_consumo:"puro",
         glicemia:"subiu 30mg/dl",
@@ -27,8 +30,9 @@ export const jsonData = [
         hipoglicemia:false
 
     },
-    {
-        alimento:"macarrão",
+    {   
+        id:4,
+        alimento:"Macarrão",
         peso:"500g",
         modo_consumo:"puro",
         glicemia:"subiu 50mg/dl",
@@ -36,8 +40,9 @@ export const jsonData = [
         hipoglicemia:false
 
     },
-    {
-        alimento:"chocolate",
+    {   
+        id:5,
+        alimento:"Chocolate",
         peso:"80g",
         modo_consumo:"puro",
         glicemia:"subiu 20mg/dl",
@@ -45,8 +50,9 @@ export const jsonData = [
         hipoglicemia:false
 
     },
-    {
-        alimento:"banana",
+    {   
+        id:6,
+        alimento:"Banana",
         peso:"100g",
         modo_consumo:"puro",
         glicemia:"ficou estável",
