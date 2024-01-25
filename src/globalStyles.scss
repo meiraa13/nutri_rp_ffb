@@ -17,18 +17,19 @@ button {
 
 
 :root {
-    --color-primary: #fd377e;
-    --color-primary-2: #e34981;
-    --color-secondary: #03b898;
-  
-    --grey-1: #f8f9fa;
-    --grey-2: #e9ecef;
-    --grey-3: #868e96;
-    --grey-4: #212529;
+    --color-1: #1BAE70;
+    --color-2: #06752E;
+    --color-3: #14261C;
+    --color-4: #4e5652;  
+    --color-5: #4B4F58;
+    --color-6: #f4f6f4;
+    --color-7: #f6f7f8;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
 }
 
 body {
-    background-color: var(--grey-2);
+    background-color: var(--color-3);
 }
 
 
