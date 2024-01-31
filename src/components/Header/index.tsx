@@ -22,8 +22,8 @@ export function Header(){
                         <button className="button">{isOpen?<VscChromeClose/>:<TiThMenu/>}</button>
                     </div>
                     <div className="div-buttons">
-                      <a href="https://google.com" target="_blank">Doces do Nutri</a>
-                      <a>Contato</a>
+                      <a href="https://keepo.io/docesdonutri/" target="_blank">| Doces do Nutri |</a>
+                      <a href="https://polonis.com.br/bio/" target="_blank">| Acelere seus resultados |</a>
                     </div>
                 </div>
             </header>
@@ -33,7 +33,7 @@ export function Header(){
                       <a>Doces do Nutri</a>
                     </div>
                     <div> 
-                       <a>Contato</a>
+                       <a>Acelere seus resultados</a>
                     </div>
             </div>
         

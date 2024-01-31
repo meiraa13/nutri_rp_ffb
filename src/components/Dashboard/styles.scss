@@ -1,10 +1,27 @@
+
+.section-dash {
+    background-color: var(--color-6);
+
+}
+
+
+
+
+
+.div-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
 .ul-dash {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
     justify-content: center;
-    max-height: 350px;
-    overflow-y: auto;
+    // max-height: 350px;
+    // overflow-y: auto;
 
 
     li {
@@ -14,7 +31,8 @@
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        background-color: white;
+        background-color: var(--color-1);
+        color: white;
         border-radius: 0.5rem;
         text-align: center;
     }

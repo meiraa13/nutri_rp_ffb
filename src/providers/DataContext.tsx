@@ -13,7 +13,9 @@ interface IData{
     modo_consumo:string,
     glicemia:string,
     conclusão:string,
-    hipoglicemia:boolean
+    hipoglicemia:boolean,
+    destaque:boolean
+
 }
 
 interface IDataContext{

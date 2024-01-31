@@ -7,7 +7,8 @@ export const jsonData = [
         modo_consumo:"puro",
         glicemia:"ficou estável",
         conclusão:"moderado",
-        hipoglicemia:false
+        hipoglicemia:false,
+        destaque:true,
 
     },
     {   
@@ -17,7 +18,8 @@ export const jsonData = [
         modo_consumo:"puro",
         glicemia:"subiu",
         conclusão:"moderado",
-        hipoglicemia:true
+        hipoglicemia:true,
+        destaque:true,
 
     },
     {   
@@ -27,7 +29,8 @@ export const jsonData = [
         modo_consumo:"puro",
         glicemia:"subiu 30mg/dl",
         conclusão:"moderado",
-        hipoglicemia:false
+        hipoglicemia:false,
+        destaque:false,
 
     },
     {   
@@ -37,7 +40,8 @@ export const jsonData = [
         modo_consumo:"puro",
         glicemia:"subiu 50mg/dl",
         conclusão:"alto",
-        hipoglicemia:true
+        hipoglicemia:true,
+        destaque:false,
 
     },
     {   
@@ -47,7 +51,8 @@ export const jsonData = [
         modo_consumo:"puro",
         glicemia:"subiu 20mg/dl",
         conclusão:"alto",
-        hipoglicemia:false
+        hipoglicemia:false,
+        destaque:false,
 
     },
     {   
@@ -57,7 +62,8 @@ export const jsonData = [
         modo_consumo:"puro",
         glicemia:"ficou estável",
         conclusão:"baixo",
-        hipoglicemia:false
+        hipoglicemia:false,
+        destaque:false,
 
     },
 ]

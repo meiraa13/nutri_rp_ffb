@@ -7,20 +7,25 @@ export function Dashboard(){
     console.log(data)
 
     return(
-        <div className="container div-dashboard">
-            <ul className="ul-dash">
-                {
-                    data.map((item)=>(
-                        <li key={item.id}>
-                            <h3>Alimento: {item.alimento}</h3>
-                            <p>Quantidade: {item.peso}</p>
-                            <p>Variação Glicêmica: {item.glicemia}</p>
-                            <p>Conclusão: {item.conclusão}</p>
-                            <p>Teve hipoglicemia? {item.hipoglicemia?"Sim":"Não"}</p>
-                        </li>
-                    ))
-                }
-            </ul>
-        </div>
+        <section className="section-dash">
+            <div className="container div-dashboard">
+                <h2>ALIMENTOS</h2>
+                <ul className="ul-dash">
+                    {
+                        data.map((item)=>(
+                            <li key={item.id}>
+                                <h4>{item.alimento.toUpperCase()}</h4>
+                                <p>Peso: {item.peso}</p>
+                                <p>Variação Glicêmica: {item.conclusão}- {item.glicemia}</p>
+                                <p>Obs: {item.hipoglicemia?"Teve hipoglicemia":item.modo_consumo }</p>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </section>
+
+
+
     )
 }
