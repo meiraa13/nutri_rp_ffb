@@ -66,4 +66,92 @@ export const jsonData = [
         destaque:false,
 
     },
+    {   
+        id:7,
+        alimento:"banana",
+        peso:"100g",
+        modo_consumo:"puro",
+        glicemia:"ficou estável",
+        conclusão:"baixo",
+        hipoglicemia:false,
+        destaque:false,
+
+    },
+    {   
+        id:8,
+        alimento:"banana",
+        peso:"100g",
+        modo_consumo:"puro",
+        glicemia:"ficou estável",
+        conclusão:"baixo",
+        hipoglicemia:false,
+        destaque:false,
+
+    },
+    {   
+        id:9,
+        alimento:"banana",
+        peso:"100g",
+        modo_consumo:"puro",
+        glicemia:"ficou estável",
+        conclusão:"baixo",
+        hipoglicemia:false,
+        destaque:false,
+
+    },
+    {   
+        id:10,
+        alimento:"banana",
+        peso:"100g",
+        modo_consumo:"puro",
+        glicemia:"ficou estável",
+        conclusão:"baixo",
+        hipoglicemia:false,
+        destaque:false,
+
+    },
+    {   
+        id:11,
+        alimento:"banana",
+        peso:"100g",
+        modo_consumo:"puro",
+        glicemia:"ficou estável",
+        conclusão:"baixo",
+        hipoglicemia:false,
+        destaque:false,
+
+    },
+    {   
+        id:12,
+        alimento:"banana",
+        peso:"100g",
+        modo_consumo:"puro",
+        glicemia:"ficou estável",
+        conclusão:"baixo",
+        hipoglicemia:false,
+        destaque:false,
+
+    },
+    {   
+        id:13,
+        alimento:"banana",
+        peso:"100g",
+        modo_consumo:"puro",
+        glicemia:"ficou estável",
+        conclusão:"baixo",
+        hipoglicemia:false,
+        destaque:false,
+
+    },
+    {   
+        id:14,
+        alimento:"banana",
+        peso:"100g",
+        modo_consumo:"puro",
+        glicemia:"ficou estável",
+        conclusão:"baixo",
+        hipoglicemia:false,
+        destaque:false,
+
+    },
 ]

@@ -18,6 +18,9 @@
         width: 30rem;
         border-radius: 0.5rem;
         border: 1px solid;
+        @media(width <600px){
+            width: max-content;
+        }
     }
 
     button{

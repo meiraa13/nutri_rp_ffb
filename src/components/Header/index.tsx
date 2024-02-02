@@ -19,7 +19,7 @@ export function Header(){
                         <p className="name">Nutri Raphael Polonis</p>
                     </div>
                     <div onClick={()=>setIsOpen(!isOpen)} className="trigger">
-                        <button className="button">{isOpen?<VscChromeClose/>:<TiThMenu/>}</button>
+                        <button className="trigger-button">{isOpen?<VscChromeClose/>:<TiThMenu/>}</button>
                     </div>
                     <div className="div-buttons">
                       <a href="https://keepo.io/docesdonutri/" target="_blank">| Doces do Nutri |</a>
@@ -30,10 +30,10 @@ export function Header(){
 
             <div className={`mobile-menu ${isOpen && "is-open"}`}>
                     <div> 
-                      <a>Doces do Nutri</a>
+                      <a href="https://keepo.io/docesdonutri/" target="_blank">Doces do Nutri</a>
                     </div>
                     <div> 
-                       <a>Acelere seus resultados</a>
+                       <a href="https://polonis.com.br/bio/" target="_blank">Acelere seus resultados</a>
                     </div>
             </div>
         
