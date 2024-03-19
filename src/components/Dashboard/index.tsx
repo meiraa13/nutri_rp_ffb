@@ -3,8 +3,7 @@ import "./styles.scss"
 import { DataContext } from "../../providers/DataContext"
 
 export function Dashboard(){
-    const {data} = useContext(DataContext)
-    console.log(data)
+    const { data } = useContext(DataContext)
 
     return(
         <section className="section-dash">
@@ -12,12 +11,12 @@ export function Dashboard(){
                 <h2>ALIMENTOS</h2>
                 <ul className="ul-dash">
                     {
-                        data.map((item)=>(
+                        data?.map((item)=>(
                             <li key={item.id}>
-                                <h4>{item.alimento.toUpperCase()}</h4>
-                                <p>Peso: {item.peso}</p>
-                                <p>Variação Glicêmica: {item.conclusão}- {item.glicemia}</p>
-                                <p>Obs: {item.hipoglicemia?"Teve hipoglicemia":item.modo_consumo }</p>
+                                <h4>{item.name.toUpperCase()}</h4>
+                                <p>Peso: {item.weight}</p>
+                                <p>Variação Glicêmica: {item.conclusion}</p>
+                                <p>Obs: {item.hipoglycemic?"Teve hipoglicemia":item.consumption_mode }</p>
                             </li>
                         ))
                     }
