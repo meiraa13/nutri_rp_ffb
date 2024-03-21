@@ -10,9 +10,9 @@ interface IData{
     id:number,
     name:string,
     weight:string,
-    consumption_mode:string,
+    side:string,
+    result:number,
     conclusion:string,
-    conclusão:string,
     hipoglycemic:boolean,
     highlight:boolean
 
@@ -20,7 +20,11 @@ interface IData{
 
 interface IDataContext{
     data:IData[] | null,
-    setData:React.Dispatch<React.SetStateAction<IData[] | null>>
+    setData:React.Dispatch<React.SetStateAction<IData[] | null>>,
+    filter:string,
+    setFilter:React.Dispatch<React.SetStateAction<string>>,
+    searchValue:string,
+    setSearchValue:React.Dispatch<React.SetStateAction<string>>
 
 }
 
@@ -28,6 +32,8 @@ export const DataContext = createContext({} as IDataContext)
 
 export function DataProvider({children}:IChildren){
     const [data, setData] = useState<IData[] | null>(null)
+    const [filter, setFilter] = useState("")
+    const [searchValue, setSearchValue] = useState("")
 
     useEffect(()=>{
         async function fetchData(){
@@ -45,7 +51,7 @@ export function DataProvider({children}:IChildren){
     },[])
 
     return (
-        <DataContext.Provider value={{data, setData}}>
+        <DataContext.Provider value={{data, setData, filter, setFilter, searchValue, setSearchValue }}>
             {children}
         </DataContext.Provider>
     )

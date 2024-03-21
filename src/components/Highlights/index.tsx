@@ -17,8 +17,8 @@ export function Highlights(){
                             <li key={item.id}>
                             <h4>{item.name.toUpperCase()}</h4>
                             <p>Peso: {item.weight}</p>
-                            <p>Variação Glicêmica: {item.conclusão}</p>
-                            <p>Obs: {item.hipoglycemic?"Teve hipoglicemia":item.consumption_mode }</p>
+                            <p>Variação Glicêmica: {item.result}mg/dl - {item.conclusion}</p>
+                            <p>Complemento: {item.side }</p>
                         </li>
                         ))
                     }
