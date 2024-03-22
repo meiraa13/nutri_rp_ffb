@@ -1,0 +1,16 @@
+.li-card {
+
+    border: 1px solid;
+    padding: 1rem;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: var(--color-1);
+    color: white;
+    border-radius: 0.5rem;
+    text-align: center;
+    @media(width < 600px){
+        width: fit-content;
+    }
+}

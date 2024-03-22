@@ -31,6 +31,10 @@
         color: white;
     }
 
+    button:hover {
+        opacity: 70%;
+    }
+
   
     
 }
@@ -51,6 +55,10 @@
         border: 1px solid;
         padding: 0.5rem;
         border-radius: 0.5rem;
+    }
+
+    li:hover{
+        opacity: 70%;
     }
 }
 

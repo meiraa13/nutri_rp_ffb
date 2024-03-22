@@ -6,11 +6,12 @@ interface IChildren{
     children: React.ReactNode
 }
 
-interface IData{
+export interface IData{
     id:number,
     name:string,
     weight:string,
     side:string,
+    weight_side:number,
     result:number,
     conclusion:string,
     hipoglycemic:boolean,

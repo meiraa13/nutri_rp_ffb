@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import "./styles.scss"
 import { DataContext } from "../../providers/DataContext"
+import { Card } from "../Card"
 
 export function Dashboard(){
     const { data, filter } = useContext(DataContext)
@@ -16,6 +17,7 @@ export function Dashboard(){
 
     })
 
+
     return(
         <section className="section-dash">
             <div className="container div-dashboard">
@@ -23,14 +25,10 @@ export function Dashboard(){
                 <ul className="ul-dash">
                     {
                         searchProduct?.map((item)=>(
-                            <li key={item.id}>
-                                <h4>{item.name.toUpperCase()}</h4>
-                                <p>Peso: {item.weight}</p>
-                                <p>Variação Glicêmica: {item.result}mg/dl - {item.conclusion}</p>
-                                <p>Complemento: {item.side }</p>
-                            </li>
+                            <Card key={item.id} item={item} />    
                         ))
                     }
+                        
                 </ul>
             </div>
         </section>

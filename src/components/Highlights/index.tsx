@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import "./styles.scss"
 import { DataContext } from "../../providers/DataContext"
+import { Card } from "../Card"
 
 export function Highlights(){
     const { data } = useContext(DataContext)
@@ -14,12 +15,7 @@ export function Highlights(){
                 <ul>
                     {
                         highlightsArray?.map((item)=>(
-                            <li key={item.id}>
-                            <h4>{item.name.toUpperCase()}</h4>
-                            <p>Peso: {item.weight}</p>
-                            <p>Variação Glicêmica: {item.result}mg/dl - {item.conclusion}</p>
-                            <p>Complemento: {item.side }</p>
-                        </li>
+                          <Card key={item.id} item={item} />
                         ))
                     }
                     
