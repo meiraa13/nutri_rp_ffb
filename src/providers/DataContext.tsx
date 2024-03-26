@@ -13,6 +13,7 @@ export interface IData{
     side:string,
     weight_side:number,
     result:number,
+    insta:string,
     conclusion:string,
     hipoglycemic:boolean,
     highlight:boolean
