@@ -42,6 +42,11 @@ header {
  
 }
 
+.name:hover{
+    color: unset;
+    cursor:default;
+}
+
 .trigger {
     display: none;
 }
