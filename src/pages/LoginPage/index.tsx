@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom"
 import "./styles.scss"
+import { RiArrowGoBackFill } from "react-icons/ri";
 
 export function LoginPage(){
     
@@ -6,8 +8,11 @@ export function LoginPage(){
     return (
         <div className="div-login">
             <section>
-                <h3>Login</h3>
-                <form>
+                <div className="div-title">
+                    <h3>Login</h3>
+                    <Link to="/"><RiArrowGoBackFill/></Link>
+                </div>
+                <form className="login-form">
                     <div>
                         <label htmlFor="email">Email</label>
                         <input type="email" id="email" />

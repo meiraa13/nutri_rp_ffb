@@ -16,16 +16,18 @@
         flex-direction: column;
         gap: 2rem;
 
-        h3 {
+        .div-title {
+            display: flex;
+            justify-content: space-between;
             border-bottom: 1px solid;
-            text-align: center;
+            align-items: center;
         }
         
 
     }
 }
 
-form {
+.login-form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
