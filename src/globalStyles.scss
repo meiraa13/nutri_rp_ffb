@@ -26,7 +26,7 @@
 
 
 .container {
-    max-width: 65rem;
+    max-width: 80rem;
     margin: 0 auto;
     width: 100%;
     padding: 1rem;
@@ -34,8 +34,14 @@
 
 button {
     cursor: pointer;
+    background-color: unset;
+    border: unset;
 }
 
 a {
     color: unset;
+}
+
+a:hover {
+    color:purple;
 }

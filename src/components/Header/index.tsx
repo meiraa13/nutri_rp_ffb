@@ -1,7 +1,8 @@
 import "./styles.scss"
 import { TiThMenu } from "react-icons/ti";
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { VscChromeClose } from "react-icons/vsc";
+import { UserContext } from "../../providers/UserContext";
 
 
 
@@ -9,7 +10,7 @@ import { VscChromeClose } from "react-icons/vsc";
 
 export function Header(){
     const [isOpen, setIsOpen] = useState(false)
-
+    const { user } = useContext(UserContext)
 
     return (
         <>
@@ -18,6 +19,9 @@ export function Header(){
                     <div className="div-infos">
                         <p className="name">Nutri Raphael Polonis</p>
                     </div>
+                    {
+                        user && <button>INSERIR NOVO ALIMENTO</button>
+                    }
                     <div onClick={()=>setIsOpen(!isOpen)} className="trigger">
                         <button className="trigger-button">{isOpen?<VscChromeClose/>:<TiThMenu/>}</button>
                     </div>

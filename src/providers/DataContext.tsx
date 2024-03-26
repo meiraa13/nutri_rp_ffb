@@ -1,36 +1,59 @@
-import { createContext, useState } from "react"
-import { jsonData } from "../data/data"
+import { createContext, useEffect, useState } from "react"
+import { api } from "../services/api"
 
 
-interface IChildren{
+export interface IChildren{
     children: React.ReactNode
 }
 
-interface IData{
+export interface IData{
     id:number,
-    alimento:string,
-    peso:string,
-    modo_consumo:string,
-    glicemia:string,
-    conclusão:string,
-    hipoglicemia:boolean,
-    destaque:boolean
+    name:string,
+    weight:string,
+    side:string,
+    weight_side:number,
+    result:number,
+    insta:string,
+    conclusion:string,
+    hipoglycemic:boolean,
+    highlight:boolean
 
 }
 
 interface IDataContext{
-    data:IData[],
-    setData:React.Dispatch<React.SetStateAction<IData[]>>
+    data:IData[] | null,
+    setData:React.Dispatch<React.SetStateAction<IData[] | null>>,
+    filter:string,
+    setFilter:React.Dispatch<React.SetStateAction<string>>,
+    searchValue:string,
+    setSearchValue:React.Dispatch<React.SetStateAction<string>>
 
 }
 
 export const DataContext = createContext({} as IDataContext)
 
 export function DataProvider({children}:IChildren){
-    const [data, setData] = useState<IData[]>(jsonData)
+    const [data, setData] = useState<IData[] | null>(null)
+    const [filter, setFilter] = useState("")
+    const [searchValue, setSearchValue] = useState("")
+
+    useEffect(()=>{
+        async function fetchData(){
+            try {
+                const response = await api.get("/foods")
+                setData(response.data)
+                
+            } catch (error) {
+                console.log(error)
+            }
+
+        }
+        fetchData()
+
+    },[])
 
     return (
-        <DataContext.Provider value={{data, setData}}>
+        <DataContext.Provider value={{data, setData, filter, setFilter, searchValue, setSearchValue }}>
             {children}
         </DataContext.Provider>
     )

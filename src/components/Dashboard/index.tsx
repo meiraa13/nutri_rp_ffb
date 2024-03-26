@@ -1,10 +1,22 @@
 import { useContext } from "react"
 import "./styles.scss"
 import { DataContext } from "../../providers/DataContext"
+import { Card } from "../Card"
 
 export function Dashboard(){
-    const {data} = useContext(DataContext)
-    console.log(data)
+    const { data, filter } = useContext(DataContext)
+
+    const searchProduct = data?.filter((item)=>{
+        if(filter === ""){
+            return true
+        }else if(filter === "baixo" || filter === "moderado" || filter == "alto"){
+            return item.conclusion == filter
+        }
+
+        return item.name.toLowerCase().includes(filter.toLowerCase())
+
+    })
+
 
     return(
         <section className="section-dash">
@@ -12,15 +24,11 @@ export function Dashboard(){
                 <h2>ALIMENTOS</h2>
                 <ul className="ul-dash">
                     {
-                        data.map((item)=>(
-                            <li key={item.id}>
-                                <h4>{item.alimento.toUpperCase()}</h4>
-                                <p>Peso: {item.peso}</p>
-                                <p>Variação Glicêmica: {item.conclusão}- {item.glicemia}</p>
-                                <p>Obs: {item.hipoglicemia?"Teve hipoglicemia":item.modo_consumo }</p>
-                            </li>
+                        searchProduct?.map((item)=>(
+                            <Card key={item.id} item={item} />    
                         ))
                     }
+                        
                 </ul>
             </div>
         </section>
