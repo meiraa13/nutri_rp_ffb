@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext  } from "react";
 import "./styles.scss"
 import { GoSearch } from "react-icons/go";
 import { DataContext } from "../../providers/DataContext";
