@@ -18,9 +18,8 @@ export function Header(){
             <header>
                 <div className="container div-header">
                     <div className="div-infos">
-                        <p className="name">Nutri Raphael Polonis</p>
+                        <Link to="/login" className="name">Nutri Raphael Polonis</Link>
                     </div>
-                    <Link to="/login">login</Link>
                     {
                         user && <button>INSERIR NOVO ALIMENTO</button>
                     }
