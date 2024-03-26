@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react"
 import { api } from "../services/api"
 
 
-interface IChildren{
+export interface IChildren{
     children: React.ReactNode
 }
 

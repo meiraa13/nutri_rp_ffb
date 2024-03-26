@@ -1,0 +1,56 @@
+.div-login {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--color-1);
+
+    section {
+        border: 1px solid;
+        width: 30rem;
+        background-color: var(--color-6);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        h3 {
+            border-bottom: 1px solid;
+            text-align: center;
+        }
+        
+
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    input {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        border: 1px solid;
+        padding: 0.5rem;
+        background-color: var(--color-2);
+        color: white;
+        border-radius: 0.5rem;
+        text-align: center;
+    }
+
+    button:hover {
+        opacity: 80%;
+    }
+}
