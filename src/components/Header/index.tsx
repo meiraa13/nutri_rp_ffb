@@ -3,6 +3,7 @@ import { TiThMenu } from "react-icons/ti";
 import { useContext, useState } from "react"
 import { VscChromeClose } from "react-icons/vsc";
 import { UserContext } from "../../providers/UserContext";
+import { Link } from "react-router-dom";
 
 
 
@@ -19,6 +20,7 @@ export function Header(){
                     <div className="div-infos">
                         <p className="name">Nutri Raphael Polonis</p>
                     </div>
+                    <Link to="/login">login</Link>
                     {
                         user && <button>INSERIR NOVO ALIMENTO</button>
                     }
