@@ -26,7 +26,11 @@ interface IDataContext{
     filter:string,
     setFilter:React.Dispatch<React.SetStateAction<string>>,
     searchValue:string,
-    setSearchValue:React.Dispatch<React.SetStateAction<string>>
+    setSearchValue:React.Dispatch<React.SetStateAction<string>>,
+    createModalState:boolean,
+    setCreateModalState:React.Dispatch<React.SetStateAction<boolean>>,
+    createFood:(data: any)=> Promise<void>
+
 
 }
 
@@ -36,6 +40,7 @@ export function DataProvider({children}:IChildren){
     const [data, setData] = useState<IData[] | null>(null)
     const [filter, setFilter] = useState("")
     const [searchValue, setSearchValue] = useState("")
+    const [createModalState, setCreateModalState] = useState(false)
 
     useEffect(()=>{
         async function fetchData(){
@@ -52,8 +57,22 @@ export function DataProvider({children}:IChildren){
 
     },[])
 
+    async function createFood(data:any){
+        console.log(data)
+    }
+
     return (
-        <DataContext.Provider value={{data, setData, filter, setFilter, searchValue, setSearchValue }}>
+        <DataContext.Provider value={{
+            data, 
+            setData, 
+            filter, 
+            setFilter, 
+            searchValue, 
+            setSearchValue, 
+            createModalState, 
+            setCreateModalState,
+            createFood
+        }}>
             {children}
         </DataContext.Provider>
     )
