@@ -2,9 +2,10 @@ import { useContext } from "react"
 import "./styles.scss"
 import { DataContext } from "../../providers/DataContext"
 import { Card } from "../Card"
+import { CreateModal } from "../CreateModal"
 
 export function Dashboard(){
-    const { data, filter } = useContext(DataContext)
+    const { data, filter, createModalState } = useContext(DataContext)
 
     const searchProduct = data?.filter((item)=>{
         if(filter === ""){
@@ -20,6 +21,7 @@ export function Dashboard(){
 
     return(
         <section className="section-dash">
+            { createModalState && <CreateModal /> }
             <div className="container div-dashboard">
                 <h2>ALIMENTOS</h2>
                 <ul className="ul-dash">

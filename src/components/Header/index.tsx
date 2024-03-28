@@ -4,6 +4,7 @@ import { useContext, useState } from "react"
 import { VscChromeClose } from "react-icons/vsc";
 import { UserContext } from "../../providers/UserContext";
 import { Link } from "react-router-dom";
+import { DataContext } from "../../providers/DataContext";
 
 
 
@@ -12,6 +13,7 @@ import { Link } from "react-router-dom";
 export function Header(){
     const [isOpen, setIsOpen] = useState(false)
     const { user } = useContext(UserContext)
+    const { setCreateModalState } = useContext(DataContext)
 
     return (
         <>
@@ -21,7 +23,7 @@ export function Header(){
                         <Link to="/login" className="name">Nutri Raphael Polonis</Link>
                     </div>
                     {
-                        user && <button>INSERIR NOVO ALIMENTO</button>
+                        user && <button onClick={()=>setCreateModalState(true)}>INSERIR NOVO ALIMENTO</button>
                     }
                     <div onClick={()=>setIsOpen(!isOpen)} className="trigger">
                         <button className="trigger-button">{isOpen?<VscChromeClose/>:<TiThMenu/>}</button>
