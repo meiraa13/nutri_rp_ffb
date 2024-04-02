@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { IData } from "../../providers/DataContext"
+import { DataContext, IData } from "../../providers/DataContext"
 import "./styles.scss"
 import { FaInstagram } from "react-icons/fa";
 import { RiEditFill, RiDeleteBin6Fill } from "react-icons/ri";
@@ -10,18 +10,19 @@ interface ICardProp{
 }
 
 export function Card({item}:ICardProp){
-
     const { user } = useContext(UserContext)
+    const { deleteFood } = useContext(DataContext)
+
 
     return (
         <li className="li-card">
-            <div>
+            <div className="div-title">
                 <h4>{item.name.toUpperCase()}</h4>
                 {
                     user && 
                     <>
                         <button><RiEditFill/></button>
-                        <button><RiDeleteBin6Fill/></button>
+                        <button onClick={()=>deleteFood(item.id)}><RiDeleteBin6Fill/></button>
                     </>
                 }
                 { item.insta && <a href={item.insta} target="_blank"><FaInstagram size={22} color="purple"/></a> }

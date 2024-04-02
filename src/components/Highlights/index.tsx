@@ -10,9 +10,9 @@ export function Highlights(){
 
     return (
         <section className="section-highlights">
-            <div className="container">
+            <div className="container div-highlights">
                 <h2>DESTAQUES</h2>
-                <ul>
+                <ul className="ul-high">
                     {
                         highlightsArray?.map((item)=>(
                           <Card key={item.id} item={item} />

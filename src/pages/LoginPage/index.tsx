@@ -23,8 +23,8 @@ export function LoginPage(){
                 </div>
                 <form onSubmit={handleSubmit(userLogin)} className="login-form">
                     <div>
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id="email" {...register("email")} />
+                        <label htmlFor="name">Usuário</label>
+                        <input  id="name" {...register("name")} />
                     </div>
                     <div>
                         <label htmlFor="password">Senha</label>

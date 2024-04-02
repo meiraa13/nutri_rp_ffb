@@ -55,7 +55,7 @@ export function CreateModal(){
                         <div>
                             <label htmlFor="hipoglycemic">Hipoglicemia</label>
                             <select id="hipoglycemic" {...register("hipoglycemic")}>
-                                <option value="nao">Não</option>
+                                <option value="">Não</option>
                                 <option value="sim">Sim</option>
                             </select>
                             <p>{errors.hipoglycemic?.message}</p>
@@ -63,7 +63,7 @@ export function CreateModal(){
                         <div>
                             <label htmlFor="highlight">Destaque</label>
                             <select id="highlight" {...register("highlight")}>
-                                <option value="nao">Não</option>
+                                <option value="">Não</option>
                                 <option value="sim">Sim</option>
                             </select>
                             <p>{errors.highlight?.message}</p>

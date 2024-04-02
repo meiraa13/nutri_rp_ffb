@@ -1,5 +1,9 @@
-import { createContext, useEffect, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
 import { api } from "../services/api"
+import { TCreateFood } from "../components/CreateModal/validator"
+import { UserContext } from "./UserContext"
+import { jwtDecode } from "jwt-decode"
+import { toast } from "react-toastify"
 
 
 export interface IChildren{
@@ -7,10 +11,10 @@ export interface IChildren{
 }
 
 export interface IData{
-    id:number,
+    id:string,
     name:string,
-    weight:string,
-    side:string,
+    weight:number,
+    side:string | undefined ,
     weight_side:number,
     result:number,
     insta:string,
@@ -29,7 +33,8 @@ interface IDataContext{
     setSearchValue:React.Dispatch<React.SetStateAction<string>>,
     createModalState:boolean,
     setCreateModalState:React.Dispatch<React.SetStateAction<boolean>>,
-    createFood:(data: any)=> Promise<void>
+    createFood:(data: TCreateFood)=> Promise<void>,
+    deleteFood:(foodId:string)=> Promise<void>
 
 
 }
@@ -41,6 +46,7 @@ export function DataProvider({children}:IChildren){
     const [filter, setFilter] = useState("")
     const [searchValue, setSearchValue] = useState("")
     const [createModalState, setCreateModalState] = useState(false)
+    const { user  } = useContext(UserContext)
 
     useEffect(()=>{
         async function fetchData(){
@@ -57,8 +63,32 @@ export function DataProvider({children}:IChildren){
 
     },[])
 
-    async function createFood(data:any){
-        console.log(data)
+    async function createFood(formData:TCreateFood){
+      try {
+        const userInfo = jwtDecode(user!.token)
+        const response = await api.post(`/foods/${userInfo.sub}`, formData)
+        setData((data)=> [...data!, response.data ])
+        toast.success("Alimento criado!")
+        setCreateModalState(false)
+        
+      } catch (error) {
+        toast.error("Erro na requisição")
+        console.log(error)
+      }
+    }
+
+    async function deleteFood(foodId:string){
+        try {
+            const userInfo = jwtDecode(user!.token)
+            await api.delete(`/foods/${userInfo.sub}/food/${foodId}`)
+            const newArr = data?.filter((food)=> food.id !== foodId)
+            setData([...newArr!])
+            toast.success("item deletado!")
+
+        } catch (error) {
+            toast.error("erro na requisição")
+            console.log(error)
+        }
     }
 
     return (
@@ -71,7 +101,8 @@ export function DataProvider({children}:IChildren){
             setSearchValue, 
             createModalState, 
             setCreateModalState,
-            createFood
+            createFood,
+            deleteFood
         }}>
             {children}
         </DataContext.Provider>
