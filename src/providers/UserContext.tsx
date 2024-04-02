@@ -3,6 +3,7 @@ import { IChildren } from "./DataContext";
 import { TLoginData } from "../pages/LoginPage/validator";
 import { api } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify"
 
 interface IUser {
     token:string
@@ -25,6 +26,7 @@ export function UserProvider({children}:IChildren){
         try {
             const response = await api.post("/login", data)
             setUser(response.data)
+            toast.success("Bem-vindo!")
             setTimeout(()=>{
                 navigate("/")
 
@@ -32,6 +34,7 @@ export function UserProvider({children}:IChildren){
 
 
         } catch (error) {
+            toast.error("Erro no login")
             console.log(error)
         }
     }
