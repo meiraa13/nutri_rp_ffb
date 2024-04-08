@@ -23,12 +23,12 @@ export function CreateModal(){
                     </div>
                     <form onSubmit={handleSubmit(createFood)}>
                         <div>
-                            <label htmlFor="name">Nome</label>
+                            <label htmlFor="name">Nome*</label>
                             <input id="name" {...register("name")} />
                             <p>{errors.name?.message}</p>
                         </div>
                         <div>
-                            <label htmlFor="weight">Peso</label>
+                            <label htmlFor="weight">Peso*</label>
                             <input id="weight" type="number" {...register("weight")}/>
                             <p>{errors.weight?.message}</p>
                         </div>
@@ -43,7 +43,7 @@ export function CreateModal(){
                             <p>{errors.weight_side?.message}</p>
                         </div>
                         <div>
-                            <label htmlFor="result">Resultado</label>
+                            <label htmlFor="result">Resultado*</label>
                             <input id="result" type="number" {...register("result")} />
                             <p>{errors.result?.message}</p>
                         </div>
@@ -53,7 +53,7 @@ export function CreateModal(){
                             <p>{errors.insta?.message}</p>
                         </div>
                         <div>
-                            <label htmlFor="hipoglycemic">Hipoglicemia</label>
+                            <label htmlFor="hipoglycemic">Hipoglicemia*</label>
                             <select id="hipoglycemic" {...register("hipoglycemic")}>
                                 <option value="">Não</option>
                                 <option value="sim">Sim</option>
@@ -61,7 +61,7 @@ export function CreateModal(){
                             <p>{errors.hipoglycemic?.message}</p>
                         </div>
                         <div>
-                            <label htmlFor="highlight">Destaque</label>
+                            <label htmlFor="highlight">Destaque*</label>
                             <select id="highlight" {...register("highlight")}>
                                 <option value="">Não</option>
                                 <option value="sim">Sim</option>
