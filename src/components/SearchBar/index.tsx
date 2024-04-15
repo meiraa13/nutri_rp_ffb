@@ -4,7 +4,7 @@ import { GoSearch } from "react-icons/go";
 import { DataContext } from "../../providers/DataContext";
 
 export function SearchBar(){
-    const { setFilter, searchValue, setSearchValue } = useContext(DataContext)
+    const { setFilter, searchValue, setSearchValue, filter } = useContext(DataContext)
 
 
     function handleSubmit(e:React.FormEvent){
@@ -35,6 +35,7 @@ export function SearchBar(){
                     <li onClick={()=>handleClick("moderado")} className="yellow">Média: até 39mg/dl</li>
                     <li onClick={()=>handleClick("alto")} className="red">Alta: acima de 40mg/dl</li>
                 </div>
+                {filter && <button className="clear-filter" onClick={()=>handleClick("")}>Limpar filtro</button>}
 
             </ul>
 
