@@ -36,14 +36,11 @@ export function Header(){
             </header>
 
             <div className={`mobile-menu ${isOpen && "is-open"}`}>
-                    <div> 
-                      <a href="https://keepo.io/docesdonutri/" target="_blank">Doces do Nutri</a>
-                    </div>
-                    <div> 
-                       <a href="https://polonis.com.br/bio/" target="_blank">Acelere seus resultados</a>
-                    </div>
+                    <a href="https://keepo.io/docesdonutri/" target="_blank">Doces do Nutri</a>
+                    <a href="https://polonis.com.br/bio/" target="_blank">Acelere seus resultados</a>
             </div>
-        
+                    
         </>
+        
     )
 }

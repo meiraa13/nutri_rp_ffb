@@ -11,6 +11,10 @@
     border-radius: 0.5rem;
   
     @media(width < 600px){
+        width: 300px
+    }
+
+    @media(width <320px){
         width: fit-content;
     }
 
