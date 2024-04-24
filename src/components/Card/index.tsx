@@ -4,6 +4,7 @@ import "./styles.scss"
 import { FaInstagram } from "react-icons/fa";
 import { RiEditFill, RiDeleteBin6Fill } from "react-icons/ri";
 import { UserContext } from "../../providers/UserContext";
+import { DeleteModal } from "../DeleteModal";
 
 interface ICardProp{
     item: IData
@@ -11,7 +12,7 @@ interface ICardProp{
 
 export function Card({item}:ICardProp){
     const { user } = useContext(UserContext)
-    const { deleteFood } = useContext(DataContext)
+    const { deleteContent, setDeleteContent } = useContext(DataContext)
 
 
     return (
@@ -22,7 +23,8 @@ export function Card({item}:ICardProp){
                     user && 
                     <>
                         <button><RiEditFill/></button>
-                        <button onClick={()=>deleteFood(item.id)}><RiDeleteBin6Fill/></button>
+                        <button onClick={()=>setDeleteContent(true)}><RiDeleteBin6Fill/></button>
+                        {deleteContent && <DeleteModal itemId={item.id}/>}
                     </>
                 }
                 { item.insta && <a href={item.insta} target="_blank"><FaInstagram size={22} color="purple"/></a> }

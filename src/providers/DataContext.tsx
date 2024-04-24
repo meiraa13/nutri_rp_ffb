@@ -34,7 +34,10 @@ interface IDataContext{
     createModalState:boolean,
     setCreateModalState:React.Dispatch<React.SetStateAction<boolean>>,
     createFood:(data: TCreateFood)=> Promise<void>,
-    deleteFood:(foodId:string)=> Promise<void>
+    deleteFood:(foodId:string)=> Promise<void>,
+    deleteContent:boolean,
+    setDeleteContent:React.Dispatch<React.SetStateAction<boolean>>,
+
 
 
 }
@@ -46,6 +49,7 @@ export function DataProvider({children}:IChildren){
     const [filter, setFilter] = useState("")
     const [searchValue, setSearchValue] = useState("")
     const [createModalState, setCreateModalState] = useState(false)
+    const [deleteContent, setDeleteContent] = useState(false)
     const { user  } = useContext(UserContext)
 
     useEffect(()=>{
@@ -102,7 +106,9 @@ export function DataProvider({children}:IChildren){
             createModalState, 
             setCreateModalState,
             createFood,
-            deleteFood
+            deleteFood,
+            deleteContent,
+            setDeleteContent
         }}>
             {children}
         </DataContext.Provider>
