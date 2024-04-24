@@ -21,6 +21,7 @@ export function CreateModal(){
                         <h3>Novo Alimento</h3>
                         <button onClick={()=>setCreateModalState(false)}><VscChromeClose size={22} /> </button>
                     </div>
+                    
                     <form onSubmit={handleSubmit(createFood)}>
                         <div>
                             <label htmlFor="name">Nome*</label>
@@ -71,13 +72,13 @@ export function CreateModal(){
                         <button className="btn-create">Inserir</button>
                     </form>
 
-
-
-
-
                 </div>
             </div>
         </div>
     )
+
+
+
+
         
 }
