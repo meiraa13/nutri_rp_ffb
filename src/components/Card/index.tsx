@@ -30,10 +30,11 @@ export function Card({item}:ICardProp){
                 { item.insta && <a href={item.insta} target="_blank"><FaInstagram size={22} color="purple"/></a> }
             </div>
             <p>Peso: {item.weight}g</p>
-            <p>Variação Glicêmica: {item.result}mg/dl - {item.conclusion}</p>
+            <p>Variação Glicêmica: {item.result}mg/dl - <strong>{item.conclusion}</strong></p>
             <p>Complemento: {item.side }{item.weight_side > 0 && 
                 <span> - {item.weight_side}g</span>}
             </p>
+            {item.hipoglycemic && <p>Teve hipoglicêmia após consumo</p>}
         </li>
     )
 }
