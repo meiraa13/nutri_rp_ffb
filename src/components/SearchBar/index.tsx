@@ -35,7 +35,7 @@ export function SearchBar(){
                     <li onClick={()=>handleClick("moderado")} className="yellow">Média: até 39mg/dl</li>
                     <li onClick={()=>handleClick("alto")} className="red">Alta: acima de 40mg/dl</li>
                 </div>
-                {filter && <button className="clear-filter" onClick={()=>handleClick("")}>Limpar filtro</button>}
+                {filter && <button className="clear-filter" onClick={()=>handleClick("")}>Limpar filtro: {filter}</button>}
 
             </ul>
 
