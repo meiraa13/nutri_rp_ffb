@@ -23,7 +23,7 @@ export function Header(){
                         <Link to="/login" className="name">Nutri Raphael Polonis</Link>
                     </div>
                     {
-                        user && <button onClick={()=>setCreateModalState(true)}>INSERIR NOVO ALIMENTO</button>
+                        user && <button className="box-sw" onClick={()=>setCreateModalState(true)}>INSERIR NOVO ALIMENTO</button>
                     }
                     <div onClick={()=>setIsOpen(!isOpen)} className="trigger">
                         <button className="trigger-button">{isOpen?<VscChromeClose/>:<TiThMenu/>}</button>

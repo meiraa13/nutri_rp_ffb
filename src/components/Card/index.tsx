@@ -16,7 +16,7 @@ export function Card({item}:ICardProp){
 
 
     return (
-        <li className="li-card">
+        <li className="li-card box-sw">
             <div className="div-title">
                 <h4>{item.name.toUpperCase()}</h4>
                 {

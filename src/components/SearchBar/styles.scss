@@ -5,27 +5,26 @@
     align-items: center;
     gap: 1rem;
 
-
 }
 
 .form-search {
   
     display: flex;
     gap: 0.5rem;
-    @media (width < 320px) {
+    width: 100%;
+    justify-content: center;
+    @media (width < 400px) {
         flex-direction: column;
     }
    
     input {
         padding: 0.5rem 1rem;
-        width: 30rem;
+        width: 75%;
         border-radius: 0.5rem;
         border: 1px solid;
-        @media(width <600px){
-            width: max-content;
-        }
-        @media (width < 320px) {
-            width:  200px;
+       
+        @media (width < 400px) {
+            width:  100%;
         }
     }
 
@@ -35,8 +34,8 @@
         border: 1px solid;
         background-color: green;
         color: white;
-        @media (width < 320px) {
-            width:  200px;
+        @media (width < 400px) {
+            width:  100%;
         }
     }
     
@@ -46,13 +45,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 1rem;
+    width: 100%;
+
+    h4{
+        
+        width: 100%;
+    }
 
     div {
         display: flex;
         gap: 1rem;
-        @media (width < 320px) {
+        width: 80%;
+        justify-content: space-between;
+        @media (width < 600px) {
             flex-direction: column;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+
+            li {
+                width: 100%;
+            }
         }
     }
 
@@ -61,6 +76,8 @@
         border: 1px solid;
         padding: 0.5rem;
         border-radius: 0.5rem;
+        width: 30%;
+        text-align: center;
     }
 
     li:hover{
@@ -87,9 +104,11 @@
 .clear-filter {
 
     border: 1px solid;
-    width: 100%;
+    width: 30%;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    background-color: var(--color-4);
-    color: white;
+    background-color: var(--color-7);
+    @media (width < 600px) {
+        width: 100%;
+    }
 }
