@@ -11,7 +11,7 @@ export function Highlights(){
     return (
         <section className="section-highlights">
             <div className="container div-highlights">
-                <h2>DESTAQUES</h2>
+                <h2 className="lexend">DESTAQUES</h2>
                 <ul className="ul-high">
                     {
                         highlightsArray?.map((item)=>(

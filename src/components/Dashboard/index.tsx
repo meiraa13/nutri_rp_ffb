@@ -23,7 +23,7 @@ export function Dashboard(){
         <section className="section-dash">
             { createModalState && <CreateModal /> }
             <div className="container div-dashboard">
-                <h2>ALIMENTOS</h2>
+               <h2 className="lexend">ALIMENTOS</h2>
                 <ul className="ul-dash">
                     {
                         searchProduct?.map((item)=>(

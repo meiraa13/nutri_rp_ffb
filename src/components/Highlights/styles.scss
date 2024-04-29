@@ -11,10 +11,17 @@
         align-items: center;
         gap: 1rem;
 
+        h2{
+            border-bottom: 1px solid;
+            width: 100%;
+            text-align: center;
+        }
+
         ul {
             display: flex;
             gap: 2rem;
             flex-wrap: wrap;
+            justify-content: center;
             
         }
         
