@@ -4,7 +4,6 @@ import "./styles.scss"
 import { FaInstagram } from "react-icons/fa";
 import { RiEditFill, RiDeleteBin6Fill } from "react-icons/ri";
 import { UserContext } from "../../providers/UserContext";
-import { DeleteModal } from "../DeleteModal";
 
 interface ICardProp{
     item: IData
@@ -12,8 +11,9 @@ interface ICardProp{
 
 export function Card({item}:ICardProp){
     const { user } = useContext(UserContext)
-    const { deleteContent, setDeleteContent } = useContext(DataContext)
-
+    const { setDeleteContent, setUpdateContent } = useContext(DataContext)
+    
+   
 
     return (
         <li className="li-card box-sw">
@@ -22,11 +22,11 @@ export function Card({item}:ICardProp){
                 {
                     user && 
                     <>
-                        <button><RiEditFill/></button>
-                        <button onClick={()=>setDeleteContent(true)}><RiDeleteBin6Fill/></button>
-                        {deleteContent && <DeleteModal itemId={item.id}/>}
+                        <button onClick={()=>setUpdateContent(item)}><RiEditFill/></button>
+                        <button onClick={()=>setDeleteContent(item.id)}><RiDeleteBin6Fill/></button>
                     </>
                 }
+                    
                 { item.insta && <a href={item.insta} target="_blank"><FaInstagram size={22} color="purple"/></a> }
             </div>
             <p>Peso: {item.weight}g</p>
@@ -35,6 +35,9 @@ export function Card({item}:ICardProp){
                 <span> - {item.weight_side}g</span>}
             </p>
             {item.hipoglycemic && <p>Teve hipoglicêmia após consumo</p>}
+
         </li>
     )
+           
+        
 }

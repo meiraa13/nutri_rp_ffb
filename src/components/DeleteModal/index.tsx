@@ -3,11 +3,9 @@ import "../CreateModal/styles.scss"
 import { useContext } from "react"
 import { DataContext } from "../../providers/DataContext"
 
-interface IDeleteProps{
-    itemId:string
-}
-export function DeleteModal({ itemId }:IDeleteProps){
-    const { deleteFood, setDeleteContent} = useContext(DataContext)
+
+export function DeleteModal(){
+    const { deleteFood, setDeleteContent, deleteContent} = useContext(DataContext)
 
 
     return(
@@ -15,12 +13,12 @@ export function DeleteModal({ itemId }:IDeleteProps){
             <div className="modal-container">
                 <div className="modal-title">
                     <h3>Excluir</h3>
-                    <button onClick={()=> setDeleteContent(false)} ><VscChromeClose size={22} /> </button>
+                    <button onClick={()=> setDeleteContent("")} ><VscChromeClose size={22} /> </button>
                 </div>
                 
                 <div className="delete-modal-div" >
                     <p className="color-black">Tem certeza que deseja excluir?</p>
-                    <button onClick={()=>deleteFood(itemId)} className="btn-create">Deletar</button>
+                    <button onClick={()=>deleteFood(deleteContent)} className="btn-create">Deletar</button>
                 </div>
 
             </div>
