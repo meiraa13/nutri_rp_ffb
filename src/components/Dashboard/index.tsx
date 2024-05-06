@@ -3,9 +3,11 @@ import "./styles.scss"
 import { DataContext } from "../../providers/DataContext"
 import { Card } from "../Card"
 import { CreateModal } from "../CreateModal"
+import { UpdateModal } from "../UpdateModal"
+import { DeleteModal } from "../DeleteModal"
 
 export function Dashboard(){
-    const { data, filter, createModalState } = useContext(DataContext)
+    const { data, filter, createModalState, updateContent, deleteContent } = useContext(DataContext)
 
     const searchProduct = data?.filter((item)=>{
         if(filter === ""){
@@ -22,6 +24,8 @@ export function Dashboard(){
     return(
         <section className="section-dash">
             { createModalState && <CreateModal /> }
+            { updateContent && <UpdateModal /> }
+            { deleteContent && <DeleteModal />}
             <div className="container div-dashboard">
                <h2 className="lexend">ALIMENTOS</h2>
                 <ul className="ul-dash">
