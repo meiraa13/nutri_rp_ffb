@@ -5,6 +5,7 @@ import { VscChromeClose } from "react-icons/vsc";
 import { useForm } from "react-hook-form";
 import { TCreateFood, createFoodSchema } from "./validator";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/components/ui/button"
 
 
 export function CreateModal(){
@@ -69,7 +70,7 @@ export function CreateModal(){
                             </select>
                             <p>{errors.highlight?.message}</p>
                         </div>
-                        <button className="btn-create">Inserir</button>
+                        <Button className="w-full" >Inserir</Button>
                     </form>
 
                 </div>

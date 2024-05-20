@@ -18,24 +18,13 @@
     }
    
     input {
-        padding: 0.5rem 1rem;
+    
         width: 75%;
-        border-radius: 0.5rem;
-        border: 1px solid;
-       
         @media (width < 400px) {
             width:  100%;
         }
     }
 
-    button{
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        border: 1px solid;
-        @media (width < 400px) {
-            width:  100%;
-        }
-    }
     
 }
 
@@ -63,41 +52,11 @@
             align-items: center;
             justify-content: center;
 
-            li {
-                width: 100%;
-            }
         }
     }
 
-    li {
-        cursor: pointer;
-        border: 1px solid;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        width: 30%;
-        text-align: center;
-    }
-
-    li:hover{
-        opacity: 70%;
-    }
 }
 
-.green {
-    background-color: green;
-    color: white;
-}
-
-.yellow {
-    background-color: darkgoldenrod;
-    color: white;
-}
-
-
-.red {
-    background-color: darkred;
-    color: white;
-}   
 
 .clear-filter {
 
@@ -109,4 +68,8 @@
     @media (width < 600px) {
         width: 100%;
     }
+}
+
+.test {
+    width: 100%;
 }

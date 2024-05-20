@@ -2,6 +2,7 @@ import { VscChromeClose } from "react-icons/vsc"
 import "../CreateModal/styles.scss"
 import { useContext } from "react"
 import { DataContext } from "../../providers/DataContext"
+import { Button } from "../ui/button"
 
 export function UpdateModal(){
 
@@ -62,7 +63,7 @@ export function UpdateModal(){
                         </select>
                         <p></p>
                     </div>
-                    <button className="btn-create">Editar</button>
+                    <Button className="w-full">Atualizar</Button>
                 </form>
 
             </div>

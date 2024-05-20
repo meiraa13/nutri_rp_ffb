@@ -11,10 +11,11 @@
         align-items: center;
         gap: 1rem;
 
-        h2{
+        h1{
             border-bottom: 1px solid;
             width: 100%;
-            text-align: center;
+            font-size: larger;
+            
         }
 
         ul {
@@ -25,5 +26,15 @@
             
         }
         
+    }
+}
+
+.full-wd {
+    width: 550px;
+    @media (width < 600px) {
+        width: 300px;
+    }
+    @media (width < 320px) {
+        width: fit-content;
     }
 }
