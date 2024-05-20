@@ -11,11 +11,11 @@ export function Highlights(){
     return (
         <section className="section-highlights">
             <div className="container div-highlights">
-                <h2 className="lexend">DESTAQUES</h2>
+                <h1 className="lexend">DESTAQUES</h1>
                 <ul className="ul-high">
                     {
                         highlightsArray?.map((item)=>(
-                          <Card key={item.id} item={item} />
+                          <Card widthClass="full-wd" key={item.id} item={item} />
                         ))
                     }
                     

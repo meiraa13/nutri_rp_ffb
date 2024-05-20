@@ -4,6 +4,7 @@ import App from './App.tsx'
 import { DataProvider } from './providers/DataContext.tsx'
 import { BrowserRouter } from 'react-router-dom'
 import { UserProvider } from './providers/UserContext.tsx'
+import "./index.css"
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
  

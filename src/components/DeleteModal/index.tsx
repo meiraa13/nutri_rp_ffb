@@ -2,6 +2,7 @@ import { VscChromeClose } from "react-icons/vsc"
 import "../CreateModal/styles.scss"
 import { useContext } from "react"
 import { DataContext } from "../../providers/DataContext"
+import { Button } from "@/components/ui/button"
 
 
 export function DeleteModal(){
@@ -18,7 +19,12 @@ export function DeleteModal(){
                 
                 <div className="delete-modal-div" >
                     <p className="color-black">Tem certeza que deseja excluir?</p>
-                    <button onClick={()=>deleteFood(deleteContent)} className="btn-create">Deletar</button>
+                    <Button 
+                    onClick={()=>deleteFood(deleteContent)} 
+                    className="w-full" 
+                    variant="destructive"
+                    >Deletar
+                    </Button>
                 </div>
 
             </div>

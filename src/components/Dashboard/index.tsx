@@ -27,7 +27,7 @@ export function Dashboard(){
             { updateContent && <UpdateModal /> }
             { deleteContent && <DeleteModal />}
             <div className="container div-dashboard">
-               <h2 className="lexend">ALIMENTOS</h2>
+               <h1 className="lexend">ALIMENTOS</h1>
                 <ul className="ul-dash">
                     {
                         searchProduct?.map((item)=>(

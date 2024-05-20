@@ -2,15 +2,14 @@
 
 .li-card {
 
-    border: 1px solid;
-    padding: 1rem;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    background-color: var(--color-1);
-    color: white;
-    border-radius: 0.5rem;
+    //padding: 1rem;
+    width: 370px;
+    //display: flex;
+    //flex-direction: column;
+    //gap: 0.5rem;
+    //background-color: var(--color-1);
+    //color: white;
+    //border-radius: 0.5rem;
   
     @media(width < 600px){
         width: 300px
@@ -20,9 +19,4 @@
         width: fit-content;
     }
 
-    .div-title {
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 1px solid;
-    }
 }
