@@ -36,7 +36,7 @@ export function UpdateModal(){
                         defaultValue={updateContent?.name}
                         {...register("name")}  
                         />
-                        <p></p>
+                        <p>{errors.name?.message}</p>
                     </div>
                     <div>
                         <label htmlFor="weight">Peso*</label>
@@ -46,7 +46,7 @@ export function UpdateModal(){
                         defaultValue={updateContent?.weight}
                         {...register("weight")}
                         />
-                        <p></p>
+                        <p>{errors.weight?.message}</p>
                     </div>
                     <div>
                         <label htmlFor="side">Complemento</label>
@@ -55,7 +55,7 @@ export function UpdateModal(){
                         defaultValue={updateContent?.side} 
                         {...register("side")}
                         />
-                        <p></p>
+                        <p>{errors.side?.message}</p>
                     </div>
                     <div>
                         <label htmlFor="side-weight">Peso Complemento</label>
@@ -65,7 +65,7 @@ export function UpdateModal(){
                         defaultValue={updateContent?.weight_side}  
                         {...register("weight_side")}
                         />
-                        <p></p>
+                        <p>{errors.weight_side?.message}</p>
                     </div>
                     <div>
                         <label htmlFor="result">Resultado*</label>
@@ -75,7 +75,7 @@ export function UpdateModal(){
                         defaultValue={updateContent?.result}  
                         {...register("result")}
                         />
-                        <p></p>
+                        <p>{errors.result?.message}</p>
                     </div>
                     <div>
                         <label htmlFor="insta">Insta</label>
@@ -84,7 +84,7 @@ export function UpdateModal(){
                         defaultValue={updateContent?.insta} 
                         {...register("insta")}
                         />
-                        <p></p>
+                        <p>{errors.insta?.message}</p>
                     </div>
                     <div>
                         <label htmlFor="hipoglycemic">Hipoglicemia*</label>
@@ -96,7 +96,7 @@ export function UpdateModal(){
                             <option value="">Não</option>
                             <option value="sim">Sim</option>
                         </select>
-                        <p></p>
+                        <p>{errors.hipoglycemic?.message}</p>
                     </div>
                     <div>
                         <label htmlFor="highlight">Destaque*</label>
@@ -108,7 +108,7 @@ export function UpdateModal(){
                             <option value="">Não</option>
                             <option value="sim">Sim</option>
                         </select>
-                        <p></p>
+                        <p>{errors.highlight?.message}</p>
                     </div>
                     <Button className="w-full">Atualizar</Button>
                 </form>
