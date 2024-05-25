@@ -35,6 +35,7 @@ interface IDataContext{
     setCreateModalState:React.Dispatch<React.SetStateAction<boolean>>,
     createFood:(data: TCreateFood)=> Promise<void>,
     deleteFood:(foodId:string)=> Promise<void>,
+    updateFood:(data: TCreateFood, foodId:string)=> Promise<void>,
     deleteContent:string,
     setDeleteContent:React.Dispatch<React.SetStateAction<string>>,
     updateContent:null | IData,
@@ -84,6 +85,28 @@ export function DataProvider({children}:IChildren){
       }
     }
 
+    async function updateFood(formData:TCreateFood, foodId:string){
+        try {
+          const userInfo = jwtDecode(user!.token)
+          const response = await api.patch(`/foods/${userInfo.sub}/food/${foodId}`, formData)
+          const newArr:IData[] = data!.map((item)=>{
+            if(foodId == item.id){
+                return {...item, ...response.data}
+            }else {
+                return item
+            }
+          })
+          setData(newArr)
+          toast.success("Item editado")
+          setUpdateContent(null)
+          
+        } catch (error) {
+          toast.error("Erro na requisição")
+          console.log(error)
+        }
+      }
+  
+
     async function deleteFood(foodId:string){
         try {
             const userInfo = jwtDecode(user!.token)
@@ -114,6 +137,7 @@ export function DataProvider({children}:IChildren){
             setDeleteContent,
             setUpdateContent,
             updateContent,
+            updateFood
         }}>
             {children}
         </DataContext.Provider>

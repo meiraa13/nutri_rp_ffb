@@ -3,10 +3,22 @@ import "../CreateModal/styles.scss"
 import { useContext } from "react"
 import { DataContext } from "../../providers/DataContext"
 import { Button } from "../ui/button"
+import { SubmitHandler, useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { TCreateFood, createFoodSchema } from "../CreateModal/validator"
 
 export function UpdateModal(){
 
-    const { setUpdateContent, updateContent } = useContext(DataContext)
+    const { setUpdateContent, updateContent, updateFood } = useContext(DataContext)
+    const { register, handleSubmit, formState:{ errors }} = useForm<TCreateFood>({
+        resolver:zodResolver(createFoodSchema)
+    })
+
+    const onSubmit:SubmitHandler<TCreateFood> = (data) =>{
+        const foodId = updateContent!.id
+        updateFood(data, foodId)
+    }
+
     return (
         <div>
         <div className="modal-background">
@@ -16,40 +28,71 @@ export function UpdateModal(){
                     <button onClick={()=>setUpdateContent(null)} ><VscChromeClose size={22} /> </button>
                 </div>
                 
-                <form >
+                <form onSubmit={handleSubmit(onSubmit)} >
                     <div>
                         <label htmlFor="name">Nome*</label>
-                        <input id="name" defaultValue={updateContent?.name}  />
+                        <input 
+                        id="name" 
+                        defaultValue={updateContent?.name}
+                        {...register("name")}  
+                        />
                         <p></p>
                     </div>
                     <div>
                         <label htmlFor="weight">Peso*</label>
-                        <input id="weight" type="number" defaultValue={updateContent?.weight}/>
+                        <input 
+                        id="weight" 
+                        type="number" 
+                        defaultValue={updateContent?.weight}
+                        {...register("weight")}
+                        />
                         <p></p>
                     </div>
                     <div>
                         <label htmlFor="side">Complemento</label>
-                        <input id="side" defaultValue={updateContent?.side} />
+                        <input 
+                        id="side" 
+                        defaultValue={updateContent?.side} 
+                        {...register("side")}
+                        />
                         <p></p>
                     </div>
                     <div>
                         <label htmlFor="side-weight">Peso Complemento</label>
-                        <input id="side-weight" type="number" defaultValue={updateContent?.weight_side}  />
+                        <input 
+                        id="side-weight" 
+                        type="number" 
+                        defaultValue={updateContent?.weight_side}  
+                        {...register("weight_side")}
+                        />
                         <p></p>
                     </div>
                     <div>
                         <label htmlFor="result">Resultado*</label>
-                        <input id="result" type="number" defaultValue={updateContent?.result}  />
+                        <input 
+                        id="result" 
+                        type="number" 
+                        defaultValue={updateContent?.result}  
+                        {...register("result")}
+                        />
                         <p></p>
                     </div>
                     <div>
                         <label htmlFor="insta">Insta</label>
-                        <input id="insta" defaultValue={updateContent?.insta} />
+                        <input 
+                        id="insta" 
+                        defaultValue={updateContent?.insta} 
+                        {...register("insta")}
+                        />
                         <p></p>
                     </div>
                     <div>
                         <label htmlFor="hipoglycemic">Hipoglicemia*</label>
-                        <select id="hipoglycemic" defaultValue={updateContent?.hipoglycemic ? "sim": ""}>
+                        <select 
+                        id="hipoglycemic" 
+                        defaultValue={updateContent?.hipoglycemic ? "sim": ""}
+                        {...register("hipoglycemic")}
+                        >
                             <option value="">Não</option>
                             <option value="sim">Sim</option>
                         </select>
@@ -57,7 +100,11 @@ export function UpdateModal(){
                     </div>
                     <div>
                         <label htmlFor="highlight">Destaque*</label>
-                        <select id="highlight" defaultValue={updateContent?.highlight? "sim": ""} >
+                        <select 
+                        id="highlight" 
+                        defaultValue={updateContent?.highlight? "sim": ""} 
+                        {...register("highlight")}
+                        >
                             <option value="">Não</option>
                             <option value="sim">Sim</option>
                         </select>
